@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   container: {
     flex: 1,
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   title: {
-    fontFamily: 'open-sans-bold',
     fontSize: 16,
     textAlign: 'right',
     fontWeight: '700'
