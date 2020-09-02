@@ -2,6 +2,7 @@ import React from 'react'
 import { View, StyleSheet, Text, ImageBackground, TouchableOpacity } from 'react-native'
 
 import Colors from '../constants/Colors'
+import DefaultText from '../components/DefaultText'
 
 
 const MealItem = (props) => {
@@ -20,9 +21,9 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetails }}>
-            <Text>{props.duration}m</Text>
-            <Text>{props.complexity.toUpperCase()}</Text>
-            <Text>{props.affordability.toUpperCase()}</Text>
+            <DefaultText>{props.duration}m</DefaultText>
+            <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
+            <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
           </View>
 
         </View>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 2, width: 0 },
     shadowRadius: 18,
     elevation: 3,
-    marginBottom: 20
+    marginVertical: 20
   },
   mealRow: {
     flexDirection: 'row'
