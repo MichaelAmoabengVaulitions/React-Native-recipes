@@ -2,6 +2,7 @@
 import React from 'react';
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 import MainNavigator from './src/navigation'
 import { enableScreens } from 'react-native-screens'
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   meals: MealsReducer
 })
 
-const store = createStore(rootReducer)
+// NOTE: composeWithDevTools shoud be removed on prodution
+const store = createStore(rootReducer, composeWithDevTools())
 
 export default function App() {
 
